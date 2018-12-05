@@ -10,7 +10,7 @@ Deze plug-in is een voorbeeld en werkt enkel met de web player van [VRT Nu](http
 
 ## Hoe ga je te werk om deze plug-in zelf te gebruiken
 
-1.  [Download de laatste release](./releases/latest) van deze repo (of clone deze GitHub repo en download alles als zip file).
+1.  [Download de laatste release](https://github.com/TeamScheire/vrtnutexttospeech/archive/v0.1.zip) van deze repo (of clone deze GitHub repo en download alles als zip file).
 1.  In Google Chrome, ga naar 'Google Chrome beheren en aanpassen' (die blokjes rechts van je adresbalk).
 1.  Kies Meer hulpprogramma's > Extensies.
 1.  Zet 'Ontwikkelaarsmodus' aan.
