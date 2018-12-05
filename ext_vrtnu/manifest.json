@@ -1,51 +1,49 @@
 {
-    "manifest_version": 2,
+  "manifest_version": 2,
 
-    "name": "VRT NU ondertitel voorlezer",
-    "version": "0.0.3",
-    "description": "Werkt met VRT NU player om ondertitels luidop te lezen.",
-    "author": "KDG",
-    "permissions": [
-      "*://www.vrt.be/vrtnu/*",
-      "*://s3-eu-west-1.amazonaws.com/services-mediaservices-subtitles-prod/*",
-      "tts",
-      "activeTab"
-    ],
-  
-    "background": {
-      "scripts": [
-        "background.js"
-      ]
-    },
-  
-    "browser_action": {
-      "default_icon": {
-        "16": "icons/luidop16.png",
-        "20": "icons/luidop20.png",
-        "48": "icons/luidop48.png"
-      },
-      "default_title": "VRT Nu Luidop"
-    },
+  "name": "VRT NU ondertitel voorlezer",
+  "version": "0.1",
+  "description": "Werkt met VRT NU player om ondertitels luidop te lezen.",
+  "author": "KDG",
+  "permissions": [
+    "*://www.vrt.be/vrtnu/*",
+    "*://s3-eu-west-1.amazonaws.com/services-mediaservices-subtitles-prod/*",
+    "tts",
+    "activeTab",
+    "tabs"
+  ],
 
-    "content_scripts": [
-      {
-        "matches": [
-          "*://www.vrt.be/vrtnu/*"
-        ],
-        "all_frames": false,
-        "js": [
-          "ext/vtt.min.js",
-          "basescript.js"
-        ],
-        "run_at":    "document_end"
-      }
-    ],
-    "icons": {
+  "background": {
+    "scripts": [
+      "background.js"
+    ]
+  },
+
+  "browser_action": {
+    "default_icon": {
       "16": "icons/luidop16.png",
-      "48": "icons/luidop48.png",
-      "128": "icons/luidop128.png",
-      "256": "icons/luidop256.png"
-    }
+      "20": "icons/luidop20.png",
+      "48": "icons/luidop48.png"
+    },
+    "default_title": "VRT Nu Luidop"
+  },
 
+  "content_scripts": [{
+    "matches": [
+      "*://www.vrt.be/vrtnu/*"
+    ],
+    "all_frames": false,
+    "js": [
+      "ext/vtt.min.js",
+      "basescript.js"
+    ],
+    "run_at": "document_end"
+  }],
+  "icons": {
+    "16": "icons/luidop16.png",
+    "48": "icons/luidop48.png",
+    "128": "icons/luidop128.png",
+    "256": "icons/luidop256.png"
   }
-  
+
+}
