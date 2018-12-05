@@ -222,11 +222,10 @@ function ensureBaseSetup() {
 
 //function called when clicking the extension - setup all base requirements and activate TTS/deactive on second click
 function onExtensionMessage(request) {
-  DebugToConsole('onExtensionMessage ' + request);
+  DebugToConsole('onExtensionMessage:');
+  DebugToConsole(request);
+  
   if (request['ondertitelLuidop'] != undefined) {
-    if (!document.hasFocus()) {
-      return;
-    }
 
     if (videoVttErrorStop) {
       //cannot do anything, global error

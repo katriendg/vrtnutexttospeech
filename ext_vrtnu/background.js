@@ -1,4 +1,3 @@
-
 var lastUtterance = '';
 var speaking = false;
 
@@ -8,15 +7,16 @@ var volume = 1.0;
 var voice = 'Google Nederlands';
 
 function setBrowserIcon(iconpath) {
-  chrome.browserAction.setIcon({ path: 'icons/' + iconpath });
+  chrome.browserAction.setIcon({
+    path: 'icons/' + iconpath
+  });
 }
 
 function speakVideoUtterance(utterance) {
   console.log('speakVideoUtterance, enqueuing');
 
   chrome.tts.speak(
-    utterance,
-    {
+    utterance, {
       voiceName: voice,
       rate: parseFloat(rate),
       pitch: parseFloat(pitch),
@@ -58,26 +58,35 @@ function initBackground() {
   chrome.browserAction.onClicked.addListener(
     function (tab) {
       chrome.tabs.sendRequest(
-        tab.id,
-        { 'ondertitelLuidop': true });
+        tab.id, {
+          'ondertitelLuidop': true
+        });
     });
 }
 
-
-
 function loadContentScriptInAllTabs() {
-  chrome.windows.getAll({ 'populate': true }, function (windows) {
+  chrome.windows.getAll({
+    'populate': true
+  }, function (windows) {
     for (var i = 0; i < windows.length; i++) {
       var tabs = windows[i].tabs;
       for (var j = 0; j < tabs.length; j++) {
-        chrome.tabs.executeScript(
-          tabs[j].id,
-          { file: 'basescript.js' });
+        if (tabs[j].url.match(/vrtnu/i)) {
+          chrome.tabs.executeScript(
+            tabs[j].id, {
+              file: 'basescript.js'
+            }, callback
+          );
+        }
       }
     }
   });
 }
 
+function callback() {
+  if (chrome.runtime.lastError) {
+    console.log(chrome.runtime.lastError.message);
+  }
+}
 
 initBackground();
-
