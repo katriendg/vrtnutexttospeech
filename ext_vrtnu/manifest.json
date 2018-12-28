@@ -7,7 +7,7 @@
   "author": "KDG",
   "permissions": [
     "*://www.vrt.be/vrtnu/*",
-    "*://s3-eu-west-1.amazonaws.com/services-mediaservices-subtitles-prod/*",
+    "*://services-subtitles.vrt.be/*",
     "tts",
     "activeTab",
     "tabs"

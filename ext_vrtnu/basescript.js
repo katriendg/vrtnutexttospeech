@@ -68,7 +68,7 @@ function loadParseWebVtt() {
           DebugToConsole(xmlhttp.status + ' ' + xmlhttp.statusText);
         }
 
-        xmlhttp.open("GET", "https://s3-eu-west-1.amazonaws.com/services-mediaservices-subtitles-prod/" + videoid, true);
+        xmlhttp.open("GET", "https://services-subtitles.vrt.be/" + videoid, true);
         xmlhttp.setRequestHeader('Content-Type', 'text/plain');
 
         xmlhttp.send();
